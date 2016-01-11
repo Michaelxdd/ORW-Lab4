@@ -1,0 +1,37 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" >
+<title>Zadanie okresowe</title> <!-- tytuł strony -->
+
+<script type="text/javascript">
+var idInterwalu;
+
+
+function zmienKolor() {
+  idInterwalu = setInterval(zmienKolorTekstu, 500);
+}
+
+function zmienKolorTekstu() {
+  var elem = document.getElementById("my_box");
+  if (elem.style.color == 'gold') {
+    elem.style.color = 'grey'; <!-- zmiana koloru na szary -->
+  } else {
+    elem.style.color = 'gold'; <!-- zmiana koloru na złoty -->
+  }
+}
+
+function zatrzymajZmianeKoloru() {
+  clearInterval(idInterwalu);
+}
+
+</script>
+</head>
+
+<body onload="zmienKolor();">
+<div id="my_box">
+<h1>Tekst, który będzie zmieniał kolor.</h1> <!-- tekst, który będzie się wyświetlał. -->
+</div>
+<button onclick="zatrzymajZmianeKoloru();">Stop</button> <!-- przycisk do zatrzymywania funkcji -->
+
+</body>
+</html>
